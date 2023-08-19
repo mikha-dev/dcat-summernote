@@ -1,0 +1,32 @@
+{
+    "name": "mikha-dev/dcat-summernote",
+    "description": "summernote",
+    "type": "library",
+    "keywords": ["dcat-admin", "extension"],
+    "homepage": "https://github.com/mikha-dev/dcat-summernote",
+    "license": "MIT",
+    "version": "1.1.1",
+    "authors": [
+        {
+            "name": "mikha",
+            "email": "mikha.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "mikha-dev/dcat-admin": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dcat\\Admin\\": "src/"
+        }
+    },
+    "extra": {
+        "dcat-admin": "Dcat\\Admin\\SummernoteServiceProvider",
+        "laravel": {
+            "providers": [
+                "Dcat\\Admin\\SummernoteServiceProvider"
+            ]
+        }
+    }
+}
