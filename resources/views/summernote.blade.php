@@ -6,27 +6,27 @@
 
         @include('admin::form.error')
 
-        <div class="form-control {{$class}}" name="{{$name}}" id="{{$id}}" {!! $attributes !!} style="width: 100%; height: 300px;">
+        <div class="form-control {{$class}}" id="{{$name}}" {!! $attributes !!}>
             {{ $value }}
         </div>
 
+        <input type="hidden" name="{{$name}}" value="{{ $value }}" />
+        
         @include('admin::form.help-block')
 
     </div>
 </div>
 
-<script require="@summernote" init="{!! $selector !!}">
-    var opts = {!! admin_javascript_json($options) !!};
+<script require="@mikha.dev.summernote" init="{!! $selector !!}">
+    var options = {!! admin_javascript_json($options) !!};
 
-    opts.selector = '#'+id;
-
-    if (! opts.init_instance_callback) {
-        opts.init_instance_callback = function (editor) {
-            editor.on('Change', function(e) {
-                var html = $('#{$this->id}').summernote('code');
-                $('input[name="{$name}"]').val(html);                
-            });
+    options = $.extend({
+        callbacks: {
+            onChange: function(contents, $editable) {
+                $('input[name="{{$name}}"]').val(contents);                
+            }
         }
-    }
-    $('#{$this->id}').summernote(opts);
+    }, options);
+
+    $('#'+id).summernote(options);
 </script>

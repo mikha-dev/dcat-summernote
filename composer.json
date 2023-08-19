@@ -1,5 +1,6 @@
 {
     "name": "mikha-dev/dcat-summernote",
+    "alias": "Summernote Editor",
     "description": "summernote",
     "type": "library",
     "keywords": ["dcat-admin", "extension"],
