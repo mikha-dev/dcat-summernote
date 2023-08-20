@@ -1,1 +1,1 @@
-# Dcat Admin Extension
+# Summernote editor extension for dcat-admin
