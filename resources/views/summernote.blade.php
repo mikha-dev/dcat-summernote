@@ -6,10 +6,7 @@
 
         @include('admin::form.error')
 
-        <div class="form-control {{$class}}" id="{{$name}}" {!! $attributes !!}>
-            {!! $value !!}
-        </div>
-
+        <div class="form-control {{$class}}" id="{{$name}}" {!! $attributes !!}>{!! $value !!}</div>
         <input type="hidden" name="{{$name}}" value="" />
         
         @include('admin::form.help-block')
